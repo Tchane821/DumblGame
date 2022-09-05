@@ -25,13 +25,16 @@ class Joueur:
             self.poser()
         return False
 
-    def piocher(self, paquet: Paquet):
-        self.main_joueur.append(paquet.tire())
-
-    def poser(self):
+    def piocher(self, paquet: Paquet, ):  # TODO
+        # self.main_joueur.append(paquet.tire())
+        # self.main_joueur.append(defauce[-1:])
+        # defauce = defauce[:-1]
         pass
 
-    def dumble(self):
+    def poser(self):  # TODO
+        pass
+
+    def dumble(self):  # TODO
         pass
 
     def valeur_main(self) -> int:

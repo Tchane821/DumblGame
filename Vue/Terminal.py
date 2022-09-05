@@ -4,5 +4,5 @@ def print_choix_dumble_or_next() -> int:
     return int(r)
 
 
-class TerminalePrompt:
+class TerminalePrompt:  # TODO
     pass

@@ -1,7 +1,6 @@
 from Modele.Joueur import Joueur
 from Modele.Paquet import Paquet
-from Modele.Carte import Carte
-from Controleur.ControleurDeChoix import ControleurDeChoix
+from Modele.Defausse import Defausse
 
 
 class Game:
@@ -12,7 +11,7 @@ class Game:
     joueurs: [Joueur]
     joueur_courant: [Joueur]
     paquet: Paquet
-    defausse = [Carte]
+    defausse: Defausse
 
     def start(self, nb_joueur: int):
         if nb_joueur > 10:
@@ -31,8 +30,8 @@ class Game:
         self.paquet = Paquet()
         self.paquet.melanger()
         carte_depart = self.paquet.tire()
-        self.defausse = []
-        self.defausse.append(carte_depart)
+        self.defausse = Defausse()
+        self.defausse.poser(carte_depart)
 
         # distribution des 5 cartes de départ
         for k in range(self.NOMBRE_CARTE_DEPART):
@@ -45,7 +44,7 @@ class Game:
                 if j.jouer(self.paquet):
                     break
 
-    def end(self):
+    def end(self):  # TODO
         pass
 
     def es_la_fin(self) -> bool:
